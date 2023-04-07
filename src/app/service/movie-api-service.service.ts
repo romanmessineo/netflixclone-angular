@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class MovieApiServiceService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   baseurl = 'https://api.themoviedb.org/3';
   apikey = '3f2fd973237a5800c3b2cd57b24612c2';
@@ -42,12 +42,40 @@ export class MovieApiServiceService {
     );
   }
   /* getvideo */
-  getMovieVideo(data:any):Observable<any>
-  {
+  getMovieVideo(data: any): Observable<any> {
     return this.http.get(`${this.baseurl}/movie/${data}/videos?api_key=${this.apikey}`)
   }
   /* getactors */
-  getMovieCast(data:any):Observable<any>{
+  getMovieCast(data: any): Observable<any> {
     return this.http.get(`${this.baseurl}/movie/${data}/credits?api_key=${this.apikey}`)
   }
+  /* action */
+  fetchActionMovies(data: any): Observable<any> {
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=28`);
+  }
+  /* adventure */
+  fetchAdventureMovies(data: any): Observable<any> {
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=12`);
+  }
+  /* animation */
+  fetchAnimationMovies(data: any): Observable<any> {
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=16`);
+  }
+  /* comedy */
+  fetchComedyMovies(data: any): Observable<any> {
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=35`);
+  }
+  /* documentary */
+  fetchDocumentaryMovies(data: any): Observable<any> {
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=99`);
+  }
+  /* science-fiction */
+  fetchScienceFictionMovies(data: any): Observable<any> {
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=878`);
+  }
+  /* thriller */
+  fetchThrillerMovies(data: any): Observable<any> {
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=53`);
+  }
+
 }

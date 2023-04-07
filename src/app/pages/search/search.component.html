@@ -24,6 +24,7 @@
             src="https://image.tmdb.org/t/p/original/{{ s.poster_path }}"
             routerLink=""
             alt="{{ s.title }}"
+           [routerLink]="['/movie',s.id]"
           />
         </div>
 
