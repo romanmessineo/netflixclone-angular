@@ -11,7 +11,7 @@ export class SearchComponent implements OnInit {
   constructor(private service: MovieApiServiceService) {}
 
   ngOnInit(): void {}
-  searchResult:any;
+  searchResult: any;
   searchForm = new FormGroup({
     movieName: new FormControl(null),
   });
