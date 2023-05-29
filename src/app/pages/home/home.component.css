@@ -1,10 +1,11 @@
 .carousel-inner {
-  height: 700px;
+  max-height: 700px;
 }
 
 .carousel-inner .carousel-item img {
-  height: 700px;
+  max-height: 700px;
   object-fit: cover;
+  display: flex;
 }
 
 .carousel-caption h2 {
@@ -13,7 +14,7 @@
   font-size: 30px;
 }
 
-.carousel-captio p {
+.carousel-caption p {
   color: #ffffff;
 }
 
@@ -21,6 +22,12 @@
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: hide;
+}
+
+.rowposter::-webkit-scrollbar {
+  display: none;
 }
 
 .rowimg {
@@ -28,17 +35,15 @@
   object-fit: contain;
   width: 100%;
   box-sizing: content-box;
-  transform: transform 450ms;
   margin-right: 7px;
+  transition: transform 450ms;
 }
 
 .rowimg:hover {
   transform: scale(1.09);
   cursor: pointer;
 }
+
 .largeposter {
   max-height: 300px;
-}
-.rowposter::-webkit-scrollbar {
-  display: none;
 }

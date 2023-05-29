@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   animationMovieResult!: any[];
   comedyMovieResult!: any[];
   documentaryMovieResult!: any[];
-  scienceFictionMovieResult!: any[];
+  sciencefictionMovieResult!: any[];
   thrillerMovieResult!: any[];
 
   ngOnInit(): void {
@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
   /* science-fiction */
   scienceFictionMovie() {
     this.service.fetchScienceFictionMovies({}).subscribe((result) => {
-      this.scienceFictionMovieResult = result.results;
+      this.sciencefictionMovieResult = result.results;
     });
   }
   /* thriller */
